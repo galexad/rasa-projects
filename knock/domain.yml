@@ -1,0 +1,146 @@
+slots:
+  jix:
+    type: text
+  jokes:
+    type: list
+
+intents:
+  - ask_joke
+  - whoisthere: 
+      triggers: action_joke_setup
+  - who:
+      triggers: action_joke_punchline
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  
+actions:
+  - utter_knockknock
+  - utter_deja
+  - utter_doctor
+  - utter_laugh
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_default
+  - action_joke_setup
+  - action_joke_punchline
+  - utter_alex
+  - utter_alex_2
+  - utter_pasta
+  - utter_pasta_2
+  - utter_bpencil
+  - utter_bpencil_2
+  - utter_herd
+  - utter_herd_2
+  - utter_cereal
+  - utter_cereal_2
+  - utter_owl
+  - utter_owl_2
+  - utter_icecream
+  - utter_icecream_2
+  - utter_razor
+  - utter_razor_2
+  - utter_roach
+  - utter_roach_2
+
+templates:
+
+  utter_knockknock:
+  - text: "Knock knock!"
+
+  utter_deja:
+  - text: "Deja"
+
+  utter_doctor:
+  - text: "Doctor"
+
+  utter_laugh:
+  - text: "hahaha"
+
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_default:
+  - text: "Sorry, I don’t understand."
+
+  utter_alex:
+  - text: "Alex"
+
+  utter_alex_2:
+  - text: "Alex-plain when you open the door!"
+
+  utter_pasta:
+  - text: "Pasta"
+
+  utter_pasta_2:
+  - text: "Pasta salt please!"
+
+  utter_bpencil:
+  - text: "Broken pencil"
+
+  utter_bpencil_2:
+  - text: "Never mind, there’s no point."
+
+  utter_herd:
+  - text: "A herd"
+ 
+  utter_herd_2:
+  - text: "A herd you inside, open up!"
+
+  utter_cereal:
+  - text: "Cereal"
+
+  utter_cereal_2:
+  - text: "Ce-real pleasure to see you!"
+
+  utter_owl:
+  - text: "who"
+
+  utter_owl_2:
+  - text: "What is this, Harry Potter’s Sanctuary for Injured Owls?"
+
+  utter_icecream:
+  - text: "Ice cream"
+
+  utter_icecream_2:
+  - text: "Ice Cream Soda whole neighborhood can hear!"
+
+  utter_razor:
+  - text: "Razor"
+
+  utter_razor_2:
+  - text: "Razor hands and dance the boogie!"
+
+  utter_roach:
+  - text: "Roach"
+
+  utter_roach_2:
+  - text: "Roach you a poem but decided on a knock knock joke instead."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
