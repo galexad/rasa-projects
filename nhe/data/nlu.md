@@ -9,6 +9,18 @@
 - good morning
 - good evening
 
+## intent:start
+- let's start
+- alright, i am ready
+- ready to beat Gabriela
+- ready to play
+- lets play
+- okay start
+- start game
+- lets start
+- shall we begin
+- lets begin
+
 ## intent:instructions
 - what do i have to do?
 - what are the instructions
@@ -35,6 +47,9 @@
 - of course i have
 - definitely yes
 - yeah i have
+- this always happens lol
+- it's funny because it's true
+- yeah definitely
 
 ## intent:deny
 - i have never done this
@@ -55,3 +70,12 @@
 - i never had the chance
 - i could never do it
 - i wanted but i didnt
+
+## intent:whichscore
+- what is the score?
+- which score
+- score please
+- whats my score
+- tell me the score
+- i want to know who is winning
+- get me the score

@@ -1,10 +1,10 @@
 slots:
-  player1:
-    type: unfeaturized
-  player2:
-    type: unfeaturized
+  jix:
+    type: text
+  score:
+    type: list
   intent_slot:
-    type: unfeaturized
+    type: text
 
 intents:
   - greet
@@ -12,25 +12,37 @@ intents:
   - affirm:
       triggers: action_play_game
   - deny:
-      triggers: action_play_game
+      triggers: action_play_game_2
+  - whichscore:
+      triggers: action_get_score
+  - start 
 
 actions:
   - utter_greet
   - utter_instructions
   - utter_default
   - action_play_game
+  - action_play_game_2
+  - action_get_score
+  - utter_ready
+  - utter_over
 
 templates:
-
   utter_greet:
   - text: "Hello, let's play the game 'Never have I ever'."
 
   utter_instructions:
-  - text: "It basically is an online party game about the poor life decisions that you and Gabriela have both made.I'm Kevin and I will be the mediator between you and her. I will say something that I haven’t done, like 'Never have I ever Got drunk playing this game.' and if you have done it, then you lose a poin$           You have ten points to start and when you don’t have any more points you are out of the game."
+  - text: "It is an online party game about the poor life decisions that you and Gabriela have both made. I'm Kevin and I will be the mediator between you and her. I will say something that I haven’t done, like 'Never have I ever Got drunk playing this game.' and if you have done it, then you lose a point. You both begin with 10 points and whoever reaches 0 first is out of the game."
 
   utter_default:
   - text: "Please say whether you have or haven't experienced this."
 
+  utter_ready:
+  - text: "Are you ready Player1?Let's start!"
+
+  utter_over:
+  - text: "The game is over now"
+
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
