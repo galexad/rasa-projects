@@ -8,11 +8,15 @@
 - hey do you want to play a game
 - good morning
 - good evening
+- anybody there?
 
-## intent:start
+## intent:understood
+- alright i understood
+- i understand
+- okay i'm ready to play 
 - let's start
 - alright, i am ready
-- ready to beat Gabriela
+- ready to show morty who is his grandpa
 - ready to play
 - lets play
 - okay start
@@ -20,19 +24,7 @@
 - lets start
 - shall we begin
 - lets begin
-
-## intent:instructions
-- what do i have to do?
-- what are the instructions
-- i don't know much about this game
-- what am i supposed to do
-- do you think it's difficult to play?
-- what now?
-- when do we start
-- can we start now
-- let's play
-- who starts first
-- who will begin
+- challenge accepted
 
 ## intent:affirm
 - well i have
@@ -79,3 +71,13 @@
 - tell me the score
 - i want to know who is winning
 - get me the score
+
+## intent:play_again
+- i want to play again
+- reset
+- restart game
+- play again
+- can i play again?
+- i want to do better
+- once more
+- once again please

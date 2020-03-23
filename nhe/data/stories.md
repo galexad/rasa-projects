@@ -2,10 +2,6 @@
 * greet
   - utter_greet
 
-## start
-* start
+## understood
+* understood
   - utter_ready
-
-## instructions
-* instructions
-  - utter_instructions
