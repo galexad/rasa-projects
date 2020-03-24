@@ -72,12 +72,10 @@
 - i want to know who is winning
 - get me the score
 
-## intent:play_again
-- i want to play again
-- reset
-- restart game
-- play again
-- can i play again?
-- i want to do better
-- once more
-- once again please
+## intent:thanks
+- thanks
+- thank you
+- thanks a lot
+- i loved it
+- that was great
+- thank you very much

@@ -22,7 +22,8 @@ def stats():
               "Never have I ever been so freaked to be outside at night, that I ran back in.",
               "Never have I ever screamed because of a bug.",
               "Never have I ever stepped barefoot in dog poop.",
-              "Never have I ever let dirty dishes sit in the sink for over a week."]
+              "Never have I ever let dirty dishes sit in the sink for over a week.",
+              "Never have I ever lied during this game"]
     return s
 
 correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
@@ -47,24 +48,40 @@ class ActionGameA(Action):
 
         while over is False:
             for jix in range(len(statements)+1):
-                t = statements[jix]
-                intent = tracker.latest_message['intent'].get('name')
-                dispatcher.utter_message(str(t))
+                if score < 16:
+                    t = statements[jix]
+                    intent = tracker.latest_message['intent'].get('name')
+                    dispatcher.utter_message(str(t))
 
-                if intent == 'affirm':
-                    if correct[jix] == 1:
-                        score = score+1
-                    else:
-                        over = True
-                statements.pop(jix)
-                correct.pop(jix)
-                return [SlotSet("jix", jix), SlotSet("score", score), SlotSet("over", over)]
+                    if intent == 'affirm':
+                        if correct[jix] == 1:
+                            score = score+1
+                        else:
+                            over = True
+                    statements.pop(jix)
+                    correct.pop(jix)
+
+                    return [SlotSet("jix", jix), SlotSet("score", score), SlotSet("over", over)]
+                else:
+                    dispatcher.utter_message("15/15 Congratulations, you are a true Pickle Rick!!!")
+                    dispatcher.utter_message("Do you want to play again?")
+                    if tracker.latest_message['intent'].get('name') == "affirm":
+                        over = False
+                        score = 0
+                        correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
+                        statements = stats()
+                        return [Restarted()]
+                    elif tracker.latest_message['intent'].get('name') == "deny":
+                        dispatcher.utter_message("Thanks for playing.")
+                        final_score = "Final score: " + str(score-1) + "/15"
+                        dispatcher.utter_message(final_score)
+                        return []
 
         dispatcher.utter_message("Game over. Would you maybe like to try once more?")
         if tracker.latest_message['intent'].get('name') == "affirm":
             over = False
             score = 0
-            correct = [1,1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1]
+            correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
             statements = stats()
             return [Restarted()]
         elif tracker.latest_message['intent'].get('name') == "deny":
@@ -82,39 +99,51 @@ class ActionGameB(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        global score
-        global over
+        global score, over
         global statements, correct
 
         while over is False:
-           for jix in range(len(statements)+1):
-                t = statements[jix]
-                intent = tracker.latest_message['intent'].get('name')
-                dispatcher.utter_message(str(t))
+            for jix in range(len(statements)+1):
+                if score < 16:
+                    t = statements[jix]
+                    intent = tracker.latest_message['intent'].get('name')
+                    dispatcher.utter_message(str(t))
 
-                if intent == 'deny':
-                    if correct[jix] == 0:
-                        score = score+1
-                    else:
-                        over = True
-                statements.pop(jix)
-                correct.pop(jix)
+                    if intent == 'deny':
+                        if correct[jix] == 0:
+                            score = score+1
+                        else:
+                            over = True
+                    statements.pop(jix)
+                    correct.pop(jix)
+                    return [SlotSet("jix", jix), SlotSet("score", score), SlotSet("over", over)]
+                else:
+                    dispatcher.utter_message("15/15 Congratulations, you are a true Pickle Rick!!!")
+                    dispatcher.utter_message("Do you want to play again?")
+                    if tracker.latest_message['intent'].get('name') == "affirm":
+                        over = False
+                        score = 0
+                        correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
+                        statements = stats()
+                        return [Restarted()]
+                    elif tracker.latest_message['intent'].get('name') == "deny":
+                        dispatcher.utter_message("Thanks for playing.")
+                        final_score = "Final score: " + str(score-1) + "/15"
+                        dispatcher.utter_message(final_score)
+                        return []
 
-                return [SlotSet("jix", jix), SlotSet("score", score), SlotSet("over", over)]
-#       dispatcher.utter_message("15/15 Congratulations, you are a true Pickle Rick!!!")
-
-        dispatcher.utter_message("Game over. If you'd like to try once more?")
+        dispatcher.utter_message("Game over..  Would you maybe like to try once more?")
 
         if tracker.latest_message['intent'].get('name') == "affirm":
             over = False
             score = 0
-            correct = [1,1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
+            correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
             statements = stats()
             return [Restarted()]
 
         elif tracker.latest_message['intent'].get('name') == "deny":
             dispatcher.utter_message("Thanks for playing.")
-            final_score = "Final score: " + str(score-1) + "/15"
+            final_score = "Final score: " + str(score) + "/15"
             dispatcher.utter_message(final_score)
             return []
 

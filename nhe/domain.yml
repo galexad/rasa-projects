@@ -16,7 +16,7 @@ intents:
       triggers: action_get_score
   - start
   - understood
-  - play_again
+  - thanks
 
 actions:
   - utter_greet
@@ -26,6 +26,7 @@ actions:
   - action_get_score
   - utter_ready
   - action_restart
+  - utter_playagain
 
 templates:
   utter_greet:
@@ -37,6 +38,8 @@ templates:
   utter_ready:
   - text: "Are you ready to play?"
 
+  utter_playagain:
+  - text: "Do you want to play again?"
 
 session_config:
   session_expiration_time: 60
