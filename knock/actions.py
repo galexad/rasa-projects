@@ -38,15 +38,17 @@ class ActionJokeSetup(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
 
-        for jix in range(0,len(JOKES)+1):
-            if JOKES[jix] not in jokes:
-                t = JOKES[jix][0]
-                jokes.append(JOKES[jix])
-                dispatcher.utter_message(t)
-                return [SlotSet("jix", jix), SlotSet("jokes", jokes)]
+        while  len(jokes) < len(JOKES):
+            for jix in range(0,len(JOKES)):
+                if JOKES[jix] not in jokes:
+                    t = JOKES[jix][0]
+                    jokes.append(JOKES[jix])
+                    dispatcher.utter_message(t)
+                    return [SlotSet("jix", jix), SlotSet("jokes", jokes)]
 
-            if len(jokes) == len(JOKES):
-               jokes.clear()
+        dispatcher.utter_message("You have finished the list of jokes. If you want to hear them again you should let me know:)")
+        jokes.clear()
+        return []
 
 class ActionJokePunchline(Action):
 
