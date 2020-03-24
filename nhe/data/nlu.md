@@ -26,6 +26,7 @@
 - lets begin
 - challenge accepted
 
+
 ## intent:affirm
 - well i have
 - i have
@@ -42,11 +43,27 @@
 - this always happens lol
 - it's funny because it's true
 - yeah definitely
+- of course I have.. Listen Morty, i hate to break it to you, but what people call love is just a chemical reaction that compels animals to breed
+- i have, that’s why my spaceships don’t have keys morty i’ve told you this
+- i had one once, it took me to the Council of Ricks and things got pretty hairy
+- yeah actually i have, in an alternate dimension
+- always.. that would be obvious to you, Morty, if you'd been paying attention
+- uh huh yeah, i don’t care
+- i have once lol
+- always, i always have fun not caring
+- geez, Morty what a boring start to an adventure.. we could have just gone to kentucky
+- lets play again
+- i want to play again
 
 ## intent:deny
+- never, i only feel like screaming when your dad starts talking to me
+- im not that kind of guy morty
 - i have never done this
+- i never laugh morty
+- not really, do you think they know that Ricks have a very distinct and traceable brainwave due to our genius
+- no morty no
 - no never
-- never did this
+- never did this morty
 - this is crazy, no
 - what? insane, how could you think of this
 - of course not
@@ -56,7 +73,7 @@
 - no i havent
 - i haven't
 - this isn't something one should do
-- um not really
+- um not really morty
 - not exactly
 - hmm no unfortunately not
 - i never had the chance
@@ -72,10 +89,9 @@
 - i want to know who is winning
 - get me the score
 
-## intent:thanks
-- thanks
-- thank you
-- thanks a lot
-- i loved it
-- that was great
-- thank you very much
+## intent:stop
+- stop this game, my area of expertise is advanced robotics
+- stop it
+- enough morty
+- im out of this
+- this game is stupid

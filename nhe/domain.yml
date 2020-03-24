@@ -17,6 +17,7 @@ intents:
   - start
   - understood
   - thanks
+  - stop
 
 actions:
   - utter_greet
@@ -26,11 +27,11 @@ actions:
   - action_get_score
   - utter_ready
   - action_restart
-  - utter_playagain
+  - utter_stop
 
 templates:
   utter_greet:
-  - text: "Have you ever wanted to be Rick for one day? In this game, you will embody his character and since you are an unapproachable nihilist, Morty’s aim is to determine you finally reveal your personality, assuming you are willing to do so. He will make some statements and you have to answer whether you have done it or not. Watch out.. he had secretly found your “Inherently damaging to Rick’s integrity” diary so he might know when you are being untruthful. If you’re being dishonest, Morty will notice and immediately give up on wanting to know you better, so the game is over. Your aim should be answering all of the 20 statements in order to make Morty proud of your emotional and social development!"
+  - text: "Have you ever wanted to be Rick for one day? In this game you will have the chance to and since you are an unapproachable nihilist, Morty’s aim is to determine you reveal your true personality, assuming you are willing to do so. He will make some statements and you have to answer whether you have done it or not. Watch out.. he had secretly found your “Inherent damage to Rick’s integrity” diary so he knows when you say the truth. If you’re being dishonest, Morty will notice and immediately lose hope about your attitude, so the game is over. Your aim should be answering all of the 15 statements in order to make Morty aware of your emotional and social development!"
 
   utter_default:
   - text: "Rick, please say whether you have or haven't experienced this. Do you still want to play?"
@@ -38,8 +39,8 @@ templates:
   utter_ready:
   - text: "Are you ready to play?"
 
-  utter_playagain:
-  - text: "Do you want to play again?"
+  utter_stop:
+  - text: "Alright Rick let's just go on an adventure instead."
 
 session_config:
   session_expiration_time: 60

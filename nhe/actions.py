@@ -26,7 +26,7 @@ def stats():
               "Never have I ever lied during this game"]
     return s
 
-correct = [1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1]
+correct = [1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0]
 score = 0
 over = False
 statements = stats()
@@ -41,10 +41,7 @@ class ActionGameA(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global score
-        global over
-        global correct
-        global statements
+        global score, over, correct, statements
 
         while over is False:
             for jix in range(len(statements)+1):
@@ -142,7 +139,6 @@ class ActionGameB(Action):
             return [Restarted()]
 
         elif tracker.latest_message['intent'].get('name') == "deny":
-            dispatcher.utter_message("Thanks for playing.")
             final_score = "Final score: " + str(score) + "/15"
             dispatcher.utter_message(final_score)
             return []
