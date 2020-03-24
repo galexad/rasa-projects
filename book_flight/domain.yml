@@ -1,0 +1,74 @@
+slots:
+  from:
+    type: unfeaturized
+    auto_fill: false
+  to:
+    type: unfeaturized
+    auto_fill: false
+  date:
+    type: unfeaturized
+    auto_fill: false
+  n_pass:
+    type: unfeaturized
+    auto_fill: false
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_to
+  - utter_ask_from
+  - utter_ask_date
+  - utter_ask_n_pass
+  - utter_default
+  - utter_submit
+
+entities:
+  - from
+  - to
+  - date
+  - n_pass
+
+intents:
+  - request_booking:
+      use_entities: []
+  - greet
+  - inform:
+      use_entities: []
+  - affirm
+  - goodbye
+  - deny
+  - stop
+  - bot_challenge
+
+forms:
+  - booking_form
+
+templates:
+  utter_greet:
+  - text: "Hello there! My name is Charlie and I am Flyby's booking assistant. May I help you?"
+
+  utter_goodbye:
+  - text: "Bye bye!"
+
+  utter_ask_to:
+  - text: "And where would you like to travel?"
+
+  utter_ask_from:
+  - text: "Which city are you leaving from?"
+
+  utter_ask_date:
+  - text: "On which date?"
+  
+  utter_ask_n_pass:
+  - text: "How many tickets would you like to book?"
+
+  utter_default:
+  - text: "Sorry, could you maybe rephrase?"
+
+  utter_submit:
+  - text: "Here you have {n_pass} tickets from {from} to {to} on {date}.
+    Thank you for contacting Flyby Airlines. Enjoy your flight!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
